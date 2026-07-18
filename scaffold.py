@@ -5,54 +5,11 @@ Run this with: python scaffold.py
 Uses functions defined in model.py.
 """
 
-from model import *  # noqa: F401, F403 (pulls in your solution functions)
-
 """Mini distributed training scaffold: end-to-end demo of MLP training with
 gradient accumulation, checkpointing, mixed precision, data parallel, and ZeRO."""
 import numpy as np
 
-from solution import (
-    make_synthetic_regression_batch,
-    init_mlp_params,
-    linear_forward,
-    relu_forward,
-    mlp_forward,
-    mse_loss_and_grad,
-    linear_backward,
-    relu_backward,
-    first_linear_backward,
-    mlp_backward,
-    split_into_micro_batches,
-    accumulate_gradients,
-    scale_accumulated_gradients,
-    grad_accumulation_step,
-    mlp_forward_checkpointed,
-    recompute_block_activations,
-    mlp_backward_checkpointed,
-    estimate_checkpointing_memory_savings,
-    cast_to_half_precision,
-    make_master_params,
-    scale_loss,
-    unscale_gradients,
-    has_non_finite_gradients,
-    mixed_precision_step,
-    shard_dataset_across_workers,
-    compute_local_gradients,
-    all_reduce_mean,
-    ring_all_reduce_mean,
-    data_parallel_train_step,
-    bucket_gradients,
-    init_adam_state,
-    partition_optimizer_state,
-    local_shard_adam_update,
-    all_gather_param_shards,
-    zero_optimizer_step,
-    compute_param_memory_bytes,
-    compute_optimizer_memory_bytes,
-    compute_peak_activation_memory_bytes,
-    compare_memory_with_and_without_optimizations,
-    full_distributed_training_loop,
-)
+from model import *  # noqa: F401, F403 (pulls in all solution functions)
 
 
 if __name__ == "__main__":
